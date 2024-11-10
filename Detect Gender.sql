@@ -27,7 +27,7 @@ to mark the affected rows(customers whose gender was detected)
 	SET [Gender] = 'Male', [Gender_Update_Flag] = 1
 	WHERE [names] LIKE N'عبد%'
 	AND COALESCE ([Gender], '') != 'Company' AND [Gender_Update_Flag] IS NULL AND [Freezed] IS NULL AND [Inserted_On] = TRY_CONVERT(DATE, GETDATE(), 104);
-	SElECT @RowsAffected=@RowsAffected+@@ROWCOUNT   --Variable carries the number of rows affected
+	SElECT @RowsAffected = @RowsAffected + @@ROWCOUNT   --Variable carries the number of rows affected
 
 
 	UPDATE [dbo].[CustomerExperience]
